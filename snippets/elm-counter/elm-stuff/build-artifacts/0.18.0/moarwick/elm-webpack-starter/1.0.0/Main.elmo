@@ -1,0 +1,88 @@
+var _moarwick$elm_webpack_starter$Main$subscriptions = function (model) {
+	return _elm_lang$core$Platform_Sub$none;
+};
+var _moarwick$elm_webpack_starter$Main$init = {
+	ctor: '_Tuple2',
+	_0: {helloModel: _moarwick$elm_webpack_starter$Components_Hello$init},
+	_1: _elm_lang$core$Platform_Cmd$none
+};
+var _moarwick$elm_webpack_starter$Main$Model = function (a) {
+	return {helloModel: a};
+};
+var _moarwick$elm_webpack_starter$Main$HelloMsg = function (a) {
+	return {ctor: 'HelloMsg', _0: a};
+};
+var _moarwick$elm_webpack_starter$Main$update = F2(
+	function (msg, model) {
+		var _p0 = msg;
+		var _p1 = A2(_moarwick$elm_webpack_starter$Components_Hello$update, _p0._0, model.helloModel);
+		var updatedHelloModel = _p1._0;
+		var helloCmd = _p1._1;
+		return {
+			ctor: '_Tuple2',
+			_0: _elm_lang$core$Native_Utils.update(
+				model,
+				{helloModel: updatedHelloModel}),
+			_1: A2(_elm_lang$core$Platform_Cmd$map, _moarwick$elm_webpack_starter$Main$HelloMsg, helloCmd)
+		};
+	});
+var _moarwick$elm_webpack_starter$Main$view = function (model) {
+	return A2(
+		_elm_lang$html$Html$div,
+		{
+			ctor: '::',
+			_0: _elm_lang$html$Html_Attributes$class('App'),
+			_1: {ctor: '[]'}
+		},
+		{
+			ctor: '::',
+			_0: A2(
+				_elm_lang$html$Html$div,
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html_Attributes$class('App-header'),
+					_1: {ctor: '[]'}
+				},
+				{
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$img,
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$src('static/img/logo.svg'),
+							_1: {
+								ctor: '::',
+								_0: _elm_lang$html$Html_Attributes$class('App-logo'),
+								_1: {
+									ctor: '::',
+									_0: _elm_lang$html$Html_Attributes$alt('logo'),
+									_1: {ctor: '[]'}
+								}
+							}
+						},
+						{ctor: '[]'}),
+					_1: {
+						ctor: '::',
+						_0: A2(
+							_elm_lang$html$Html$h2,
+							{ctor: '[]'},
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html$text('Simple Counter Using Elm'),
+								_1: {ctor: '[]'}
+							}),
+						_1: {
+							ctor: '::',
+							_0: A2(
+								_elm_lang$html$Html$map,
+								_moarwick$elm_webpack_starter$Main$HelloMsg,
+								_moarwick$elm_webpack_starter$Components_Hello$view(model.helloModel)),
+							_1: {ctor: '[]'}
+						}
+					}
+				}),
+			_1: {ctor: '[]'}
+		});
+};
+var _moarwick$elm_webpack_starter$Main$main = _elm_lang$html$Html$program(
+	{init: _moarwick$elm_webpack_starter$Main$init, view: _moarwick$elm_webpack_starter$Main$view, update: _moarwick$elm_webpack_starter$Main$update, subscriptions: _moarwick$elm_webpack_starter$Main$subscriptions})();
