@@ -20,7 +20,7 @@ To finish, we’ll quickly show how, all along, we were using monads, monoids, a
 
 - [PDF](slides/DontWorryAboutMonads.pdf) 
 - [HTML](slides/html/DontWorryAboutMonads/index.html) 
-- SpeakerDeck: COMING SOON
+- [SpeakerDeck](https://speakerdeck.com/lyddonb/dont-worry-about-monads)
 
 #### Video
 
